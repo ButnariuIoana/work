@@ -28,16 +28,25 @@ class loginController extends indexController
 
 			if ($exists == false) {
 
-				 $this->flash->error('Wrong email/password');
-				 return $this->forward('index/index');
+				$this->flash->error('Wrong email/password');
+				return $this->forward('index/index');
 			}else{
-				 $this->flash->success('Welcome  '.$username  . '!!!!');
+				$this->session->set("auth", $username);
+				$this->flash->success('Welcome  '.$username  . '!!!!');
+				return $this->forward('play/index');
+
 			}
-
-
 
 		}
 
+
+	}
+
+	public function endAction()
+	{
+		$this->session->remove('auth');
+		$this->flash->success('Goodbye!');
+		return $this->forward('index/index');
 
 	}
 }
