@@ -1,0 +1,9 @@
+{
+	"require": {
+		"phalcon/devtools": "dev-master",
+		"phpunit/phpunit": "3.7.*",
+		"php": ">=5.5",
+		"ext-phalcon": ">=3.0.0",
+		"doctrine/orm": "*"
+	}
+}
