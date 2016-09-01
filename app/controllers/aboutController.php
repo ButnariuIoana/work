@@ -1,9 +1,9 @@
 <?php 
-
+namespace Test\Controllers;
 /**
 * 
 */
-class aboutController extends indexController
+class aboutController extends IndexController
 {
 	
 	public function initialiaze()

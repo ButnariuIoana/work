@@ -11,15 +11,13 @@ $loader->registerNamespaces([
     'Test\Controllers' => $config->application->controllersDir,
     'Test\Models'      => $config->application->modelsDir,
     'Test\Forms'       => $config->application->formsDir,
-    'Test\Library'             => $config->application->libraryDir
+    'Test'     		   => $config->application->libraryDir
 ]);
 
 
 
 
-$loader->registerClasses([
-    'Services' => APP_PATH . 'app/Services.php'
-]);
+
 $loader->register();
 
 

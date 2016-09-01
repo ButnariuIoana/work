@@ -1,4 +1,7 @@
 <?php 
+namespace Test\Controllers;
+
+
 /**
 * Register Class 
 */

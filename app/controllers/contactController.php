@@ -1,5 +1,8 @@
 <?php 
+namespace Test\Controllers;
 
+use Test\Forms\ContactForm;
+use Test\Models\Contact;
 /**
 *  Contact controller
 */

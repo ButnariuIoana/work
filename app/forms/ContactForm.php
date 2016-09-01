@@ -1,4 +1,5 @@
 <?php
+namespace Test\Forms;
 
 use Phalcon\Forms\Form;
 use Phalcon\Forms\Element\Text;

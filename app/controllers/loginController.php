@@ -1,4 +1,8 @@
 <?php  
+namespace Test\Controllers;
+
+use  Test\Models\Users;
+
 
 /**
 * 

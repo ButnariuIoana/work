@@ -1,4 +1,5 @@
 <?php
+namespace Test\Forms;
 
 use Phalcon\Forms\Form;
 use Phalcon\Forms\Element\Text;
@@ -11,17 +12,7 @@ class RegisterForm extends Form
 
     public function initialize($entity = null, $options = null)
     {
-        // Name
-        // $name = new Text('name');
-        // $name->setLabel('Your Full Name');
-        // $name->setFilters(array('striptags', 'string'));
-        // $name->addValidators(array(
-        //     new PresenceOf(array(
-        //         'message' => 'Name is required'
-        //     ))
-        // ));
-        // $this->add($name);
-
+    
         // Name
         $name = new Text('username');
         $name->setLabel('Username');
