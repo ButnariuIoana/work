@@ -1,4 +1,5 @@
 <?php
+namespace Test\Forms;
 
 use Phalcon\Forms\Form;
 use Phalcon\Forms\Element\Text;
@@ -34,14 +35,6 @@ class ProductsForm extends Form
         ));
         $this->add($name);
 
-        $type = new Select('product_types_id', ProductTypes::find(), array(
-            'using'      => array('id', 'name'),
-            'useEmpty'   => true,
-            'emptyText'  => '...',
-            'emptyValue' => ''
-        ));
-        $type->setLabel('Type');
-        $this->add($type);
 
         $price = new Text("price");
         $price->setLabel("Price");
@@ -53,6 +46,18 @@ class ProductsForm extends Form
             new Numericality(array(
                 'message' => 'Price is required'
             ))
+        ));
+        $this->add($price);
+
+
+        $price = new Text("description");
+        $price->setLabel("Description");
+        $price->setFilters(array('string'));
+        $price->addValidators(array(
+            new PresenceOf(array(
+                'message' => 'Description is required'
+            ))
+           
         ));
         $this->add($price);
     }

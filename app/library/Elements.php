@@ -1,4 +1,5 @@
 <?php
+namespace Test;
 
 use Phalcon\Mvc\User\Component;
 
@@ -14,6 +15,10 @@ class Elements extends Component
         'navbar-left' => array(
             'index' => array(
                 'caption' => 'Home',
+                'action' => 'index'
+            ),
+            'play' => array(
+                'caption' => 'Players',
                 'action' => 'index'
             ),
           
@@ -35,12 +40,12 @@ class Elements extends Component
     );
 
     private $_tabs = array(
-        'Invoices' => array(
-            'controller' => 'invoices',
+        'Games' => array(
+            'controller' => 'play',
             'action' => 'index',
             'any' => false
         ),
-        'Companies' => array(
+        'Campanies' => array(
             'controller' => 'companies',
             'action' => 'index',
             'any' => true
@@ -54,12 +59,8 @@ class Elements extends Component
             'controller' => 'producttypes',
             'action' => 'index',
             'any' => true
-        ),
-        'Your Profile' => array(
-            'controller' => 'invoices',
-            'action' => 'profile',
-            'any' => false
         )
+        
     );
 
     /**
@@ -72,12 +73,12 @@ class Elements extends Component
 
         $auth = $this->session->get('auth');
         if ($auth) {
-            $this->_headerMenu['navbar-right']['session'] = array(
+            $this->_headerMenu['navbar-right']['login'] = array(
                 'caption' => 'Log Out',
                 'action' => 'end'
             );
         } else {
-            unset($this->_headerMenu['navbar-left']['invoices']);
+            unset($this->_headerMenu['navbar-left']['play']);
         }
 
         $controllerName = $this->view->getControllerName();

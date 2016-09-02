@@ -20,7 +20,7 @@ class registerController extends indexController
 		if ($this->request->isPost()) {
 
 			$username 	= $this->request->getPost('username','alphanum');
-			$email 	 	 = $this->request->getPost('email');
+			$email 	 	= $this->request->getPost('email');
 			$pass 	  	= $this->request->getPost('password');
 			$repeatPass = $this->request->getPost('repeatPassword');
 

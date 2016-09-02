@@ -5,6 +5,7 @@ use Phalcon\Logger;
 
 return new Config([
     'database' => [
+        'driver' =>'pdo_mysql',
         'adapter' => 'Mysql',
         'host' => '127.0.0.1',
         'username' => 'root',
